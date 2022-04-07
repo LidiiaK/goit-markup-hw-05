@@ -29,8 +29,22 @@
                 </ul>
             </nav>
             <ul class="menu-box">
-                <li><a href="mailto:info@devstudio.com" target="_blank" class="list mailh">info@devstudio.com</a></li>
-                <li><a href="tel:+380961111111" target="_blank" class="list telh">+38 096 111 11 11</a></li>
+                <li>
+                    <a href="mailto:info@devstudio.com" target="_blank" class="list mailh">
+                        <svg class="scvg" width="16px" height="12px">
+                            <use href="./images/sprite.svg#icon-envelope"></use>
+                        </svg>
+                        info@devstudio.com
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+380961111111" target="_blank" class="list telh">
+                        <svg class="scvg" width="10px" height="16px">
+                            <use href="./images/sprite.svg#icon-smartphone"></use>
+                        </svg>
+                        +38 096 111 11 11
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
@@ -39,17 +53,21 @@
         <section class="portfolio">
             <div class="container">
                 <ul class="buttons">
-                    <li><button type="button">Все</button></li>
-                    <li><button type="button">Веб-сайты</button></li>
-                    <li><button type="button">Приложения</button></li>
-                    <li><button type="button">Дизайн</button></li>
-                    <li><button type="button">Маркетинг</button></li>
+                    <li><button class="button" type="button">Все</button></li>
+                    <li><button class="button" type="button">Веб-сайты</button></li>
+                    <li><button class="button" type="button">Приложения</button></li>
+                    <li><button class="button" type="button">Дизайн</button></li>
+                    <li><button class="button" type="button">Маркетинг</button></li>
                 </ul>
                 <!-- <h2Портфолио></h2>-->
                 <ul class="cards">
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio1.jpg" alt="Три фото на ноутбуке" width="370">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio1.jpg" alt="Три фото на ноутбуке" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит посетителю получить
+                                исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
                             <div class="cards-name">
                                 <h3>Технокряк</h3>
                                 <p>Веб-сайт</p>
@@ -58,8 +76,12 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio2.jpg" alt="Баскетболисти" width="370">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio2.jpg" alt="Баскетболисти" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит посетителю получить 
+                                исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
                             <div class="cards-name">
                                 <h3>Постер New Orlean vs Golden Star</h3>
                                 <p>Дизайн</p>
@@ -68,9 +90,13 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio3.jpg" alt="Логотип ресторана" width="370">
-                            <div class="cards-name">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio3.jpg" alt="Логотип ресторана" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
+                                <div class="cards-name">
                                 <h3>Ресторан Seafood</h3>
                                 <p>Приложение</p>
                             </div>
@@ -78,8 +104,12 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio4.jpg" alt="Наушники" width="370">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio4.jpg" alt="Наушники" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
                             <div class="cards-name">
                                 <h3>Проект Prime</h3>
                                 <p>Маркетинг</p>
@@ -88,9 +118,13 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio5.jpg" alt="Коробочки" width="370">
-                            <div class="cards-name">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio5.jpg" alt="Коробочки" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
+                                <div class="cards-name">
                                 <h3>Проект Boxes</h3>
                                 <p>Приложение</p>
                             </div>
@@ -98,8 +132,12 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio6.jpg" alt="Монитор" width="370">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio6.jpg" alt="Монитор" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
                             <div class="cards-name">
                                 <h3>Inspiration has no Borders</h3>
                                 <p>Веб-сайт</p>
@@ -108,9 +146,13 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio7.jpg" alt="Книга" width="370">
-                            <div class="cards-name">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio7.jpg" alt="Книга" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
+                                <div class="cards-name">
                                 <h3>Издание Limited Edition</h3>
                                 <p>Дизайн</p>
                             </div>
@@ -118,9 +160,13 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio8.jpg" alt="Ценник" width="370">
-                            <div class="cards-name">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio8.jpg" alt="Ценник" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
+                                <div class="cards-name">
                                 <h3>Проект LAB</h3>
                                 <p>Маркетинг</p>
                             </div>
@@ -128,9 +174,13 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="">
-                            <img src="./images/portfolio9.jpg" alt="Ноутбук" width="370">
-                            <div class="cards-name">
+                        <a class="card-box" href="">
+                            <div class="box">
+                                <img src="./images/portfolio9.jpg" alt="Ноутбук" width="370">
+                                <p class="card-overlay">Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это
+                                позволит посетителю получить исчерпывающие сведения о компании или частном лице.</p>
+                            </div>
+                                <div class="cards-name">
                                 <h3>Growing Business</h3>
                                 <p>Приложение</p>
                             </div>

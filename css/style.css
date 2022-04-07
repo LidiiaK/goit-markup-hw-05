@@ -37,6 +37,7 @@ a {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  /* position: relative; */
 }
 li {
   list-style: none;
@@ -95,10 +96,11 @@ p {
 .menu-box {
   display: flex;
   align-items: center;
-  margin-left: ;
 }
 .scvg {
   margin-right: 10px;
+  position: relative;
+  bottom: -2px;
 }
 .header .list {
   font-weight: 500;
@@ -118,10 +120,20 @@ p {
   color: var(--accent-color);
   fill: var(--accent-color);
 }
-.header .list .current {
+.current {
+  position: relative;
   color: var(--accent-color);
 }
-
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  bottom: 0;
+  left: 0;
+}
 /*index*/
 /* hero */
 .section-hero {
@@ -159,7 +171,7 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
-button {
+.button {
   color: var(--hero-text-color);
   background-color: var(--accent-color);
   font-family: Roboto, sans-serif;
@@ -172,8 +184,8 @@ button {
   letter-spacing: 0.06em;
   cursor: pointer;
 }
-button:hover,
-button:focus {
+.button:hover,
+.button:focus {
   background-color: var(--hero-buttom-hover-color);
 }
 
@@ -183,7 +195,7 @@ button:focus {
 .section-team,
 .regular-customers,
 .portfolio {
-  padding-bottom: 94px;
+  padding: 94px 0;
 }
 .section-second {
   width: 270;
@@ -225,6 +237,28 @@ button:focus {
 }
 .projects-element > li + li {
   margin-left: 30px;
+}
+.thumb {
+  position: relative;
+}
+.label {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 .photo-team > li + li {
   margin-left: 30px;
@@ -290,7 +324,7 @@ p {
   height: 44px;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid #2f303a; */
+  border: 1px solid #2f303a;
   border-radius: 50%;
   fill: var(--icon-social-color);
 }
@@ -299,9 +333,9 @@ p {
   width: 20px;
   height: 20px;
 }
-/* .icon-social:hover {
+.icon-social:hover {
   fill: var(--hero-text-color);
-} */
+}
 .social-network:not(:last-child) {
   margin-right: 10px;
 }
@@ -430,6 +464,7 @@ p {
   border-radius: 4px;
   line-height: 1.63;
   text-align: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttons > li + li {
   margin-left: 8px;
@@ -455,6 +490,31 @@ p {
   flex-basis: calc(100%-90px) / 3;
   border: 1px;
 }
+.box {
+  position: relative;
+  overflow: hidden;
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 63px 24px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(33, 150, 243, 0.9);
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-box:hover .card-overlay,
+.card-box:focus .card-overlay {
+  transform: translateY(0%);
+}
 .card:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06);
 }
@@ -471,6 +531,13 @@ p {
   letter-spacing: 0.06em;
   text-align: left;
 }
+.cards h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
 .cards p {
   font-size: 16px;
   line-height: 1.88;
@@ -484,4 +551,45 @@ p {
   border-left: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   margin-top: -4px;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
 }
